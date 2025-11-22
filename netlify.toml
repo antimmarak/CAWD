@@ -7,8 +7,8 @@
 
 [build.environment]
   # These will be set in Netlify dashboard
-  # SUPABASE_URL = "from environment variables"
-  # SUPABASE_ANON_KEY = "from environment variables"
+  # SUPABASE_URL = "https://nydxhitjiqtxluuxowcj.supabase.co"
+  # SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im55ZHhoaXRqaXF0eGx1dXhvd2NqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4Mjc5NjQsImV4cCI6MjA3OTQwMzk2NH0._iGtoSu-tGkTx3gLEFDOO0Y9aKmPRpfaRExUfDBabDc"
 
 # Redirect rules
 [[redirects]]

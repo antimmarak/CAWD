@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Class Attendance System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2>📚 Attendance System</h2>
+            </div>
+            <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <a href="dashboard.html" class="nav-link active">Dashboard</a>
+                <a href="classes.html" class="nav-link">Classes</a>
+                <a href="students.html" class="nav-link">Students</a>
+                <a href="attendance.html" class="nav-link">Attendance</a>
+                <a href="reports.html" class="nav-link">Reports</a>
+                <a href="admin.html" class="nav-link" style="display: none;">Admin Panel</a>
+                <button class="btn btn-secondary" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Welcome Header -->
+        <div class="dashboard-welcome">
+            <div class="welcome-content">
+                <div>
+                    <h1 id="welcomeTitle">Welcome Back!</h1>
+                    <p id="welcomeSubtitle">Here's what's happening with your attendance system today</p>
+                    <div class="user-badge" id="userRoleInfo">
+                        <span class="badge-icon">👤</span>
+                        <span id="userInfoText">Loading...</span>
+                    </div>
+                </div>
+                <div class="welcome-actions">
+                    <a href="attendance.html" class="quick-action-btn">
+                        <span class="action-icon">📝</span>
+                        <span>Mark Attendance</span>
+                    </a>
+                    <a href="reports.html" class="quick-action-btn">
+                        <span class="action-icon">📊</span>
+                        <span>View Reports</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="stats-grid" id="statsGrid">
+            <!-- Stats cards will be populated by JavaScript -->
+        </div>
+
+        <!-- Dashboard Content Grid -->
+        <div class="dashboard-grid">
+            <!-- Recent Activity Section -->
+            <div class="dashboard-card activity-card">
+                <div class="card-header">
+                    <div class="card-header-content">
+                        <span class="card-icon">📋</span>
+                        <h2>Recent Activity</h2>
+                    </div>
+                    <a href="reports.html" class="card-link">View All</a>
+                </div>
+                <div class="activity-list" id="activityList">
+                    <div class="loading-state">Loading activity...</div>
+                </div>
+            </div>
+
+            <!-- Quick Stats Section -->
+            <div class="dashboard-card quick-stats-card">
+                <div class="card-header">
+                    <div class="card-header-content">
+                        <span class="card-icon">⚡</span>
+                        <h2>Quick Stats</h2>
+                    </div>
+                </div>
+                <div class="quick-stats" id="quickStats">
+                    <!-- Quick stats will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Today's Overview -->
+            <div class="dashboard-card today-card">
+                <div class="card-header">
+                    <div class="card-header-content">
+                        <span class="card-icon">📅</span>
+                        <h2>Today's Overview</h2>
+                    </div>
+                </div>
+                <div class="today-overview" id="todayOverview">
+                    <!-- Today's overview will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/supabase.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script>
+        requireAuth();
+        updateNavigation();
+        initMobileMenu();
+    </script>
+</body>
+</html>
+
